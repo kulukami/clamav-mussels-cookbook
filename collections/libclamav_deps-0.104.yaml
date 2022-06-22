@@ -28,6 +28,7 @@ platforms:
         - libbz2<1.1.0
     host-static:
       dependencies:
+        - libiconv
         - libz
         - libjson_c
         - libxml2

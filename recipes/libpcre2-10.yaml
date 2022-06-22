@@ -84,7 +84,8 @@ platforms:
     host-static:
       build_script:
         configure: |
-          CFLAGS="-fPIC" ./configure --prefix="{install}" \
+          CFLAGS="-fPIC" ./configure \
+            --prefix="{install}" \
             --disable-dependency-tracking \
             --disable-shared
         make: |

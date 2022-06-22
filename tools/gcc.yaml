@@ -19,10 +19,9 @@ type: tool
 platforms:
   Posix:
     path_checks:
-      - gcc
+      - x86_64-linux-musl-gcc
     command_checks:
-      - command: "gcc --version"
-        output_has: "gcc"
+      - command: "x86_64-linux-musl-gcc --version"
+        output_has: "x86_64-linux-musl-gcc"
     file_checks:
-      - /usr/local/bin/gcc
-      - /usr/bin/gcc
+      - /opt/x86_64-linux-musl/bin/x86_64-linux-musl-gcc

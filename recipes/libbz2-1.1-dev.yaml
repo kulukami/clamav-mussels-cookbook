@@ -145,6 +145,8 @@ platforms:
           cd build
           cmake .. \
             -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_C_COMPILER=x86_64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=x86_64-linux-musl-g++ \
             -D CMAKE_INSTALL_PREFIX="{install}" \
             -D ENABLE_STATIC_LIB=ON \
             -D ENABLE_SHARED_LIB=OFF \

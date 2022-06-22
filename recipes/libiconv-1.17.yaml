@@ -1,0 +1,19 @@
+name: libiconv
+version: "1.17"
+url: https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz
+mussels_version: "0.3"
+type: recipe
+platforms:
+  Linux:
+    host-static:
+      build_script:
+        configure: |
+          ./configure --enable-static=yes --enable-shared=no --prefix="{install}"
+        make: |
+          CC="x86_64-linux-musl-gcc -static -Os" CXX="x86_64-linux-musl-c++" make 
+        install: |
+          CC="x86_64-linux-musl-gcc -static -Os" CXX="x86_64-linux-musl-c++" make install
+      dependencies: []
+      required_tools:
+        - make
+        - gcc

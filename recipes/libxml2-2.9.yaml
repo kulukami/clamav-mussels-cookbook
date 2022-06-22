@@ -186,6 +186,8 @@ platforms:
           cd build
           cmake .. \
             -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_C_COMPILER=x86_64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=x86_64-linux-musl-g++ \
             -D BUILD_SHARED_LIBS=OFF \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY_RELEASE="{libs}/libz.a" \
