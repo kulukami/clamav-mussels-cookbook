@@ -14,7 +14,7 @@
 
 name: libbz2
 version: "1.0.8"
-url: https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+url: http://lf26-elkeid.bytetos.com/obj/elkeid-download/3rd_tools/bzip2-1.0.8.tar.gz
 type: recipe
 mussels_version: "0.2"
 platforms:

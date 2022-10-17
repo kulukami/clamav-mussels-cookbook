@@ -14,7 +14,7 @@
 
 name: libpcre2
 version: "10.40"
-url: https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.gz
+url: http://lf26-elkeid.bytetos.com/obj/elkeid-download/3rd_tools/pcre2-10.40.tar.gz
 mussels_version: "0.3"
 type: recipe
 platforms:

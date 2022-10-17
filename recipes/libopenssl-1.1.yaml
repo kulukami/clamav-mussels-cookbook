@@ -14,7 +14,7 @@
 
 name: libopenssl
 version: "1.1.1n"
-url: https://www.openssl.org/source/openssl-1.1.1n.tar.gz
+url: http://lf26-elkeid.bytetos.com/obj/elkeid-download/3rd_tools/openssl-1.1.1n.tar.gz
 mussels_version: "0.2"
 type: recipe
 platforms:
