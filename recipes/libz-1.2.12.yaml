@@ -1,6 +1,6 @@
 name: libz
-version: "1.2.12"
-url: http://lf26-elkeid.bytetos.com/obj/elkeid-download/3rd_tools/zlib-1.2.12.tar.gz
+version: "1.2.13"
+url: http://lf26-elkeid.bytetos.com/obj/elkeid-download/3rd_tools/zlib-1.2.13.tar.gz
 mussels_version: "0.3"
 type: recipe
 platforms:
