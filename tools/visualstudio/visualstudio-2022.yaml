@@ -12,18 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: perl
-version: ""
-mussels_version: "0.1"
+name: visualstudio
+version: "2022"
+mussels_version: "0.3"
 type: tool
 platforms:
-  Posix:
-    path_checks:
-      - perl
-    file_checks:
-      - /usr/local/bin/perl
-      - /usr/bin/perl
   Windows:
     file_checks:
-      - C:\/Perl64/bin/perl.exe
-      - C:\/Strawberry/perl/bin/perl.exe
+      - C:\/Program Files (x86)/Microsoft Visual Studio/2022/Professional/VC/Auxiliary/Build/vcvarsall.bat
+      - C:\/Program Files (x86)/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvarsall.bat
+      - C:\/Program Files (x86)/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat
+    variables:
+      cmake_generator: Visual Studio 17 2022
