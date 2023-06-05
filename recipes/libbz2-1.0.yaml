@@ -111,7 +111,7 @@ platforms:
           - LICENSE
       required_tools:
         - make
-        - x86_64-linux-musl-gcc
+        - x86_64_linux_musl_gcc
     host-musl-aarch64:
       build_script:
         make: |
@@ -124,7 +124,7 @@ platforms:
           - LICENSE
       required_tools:
         - make
-        - aarch64-linux-musl-gcc
+        - aarch64_linux_musl_gcc
   Windows:
     x64:
       build_script:

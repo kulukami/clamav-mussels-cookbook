@@ -135,7 +135,7 @@ platforms:
       required_tools:
         - cmake
         - make
-        - x86_64-linux-musl-gcc
+        - x86_64_linux_musl_gcc
     host-musl-aarch64:
       build_script:
         configure: |

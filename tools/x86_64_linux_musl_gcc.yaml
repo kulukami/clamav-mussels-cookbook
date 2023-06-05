@@ -1,4 +1,4 @@
-name: x86_64-linux-musl-gcc
+name: x86_64_linux_musl_gcc
 version: ""
 mussels_version: "0.1"
 type: tool
@@ -8,6 +8,6 @@ platforms:
       - x86_64-linux-musl-gcc
     command_checks:
       - command: "x86_64-linux-musl-gcc --version"
-        output_has: "x86_64-linux-musl-gcc"
+        output_has: "gcc"
     file_checks:
       - /opt/x86_64-linux-musl/bin/x86_64-linux-musl-gcc

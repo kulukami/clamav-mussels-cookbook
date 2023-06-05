@@ -42,6 +42,7 @@ platforms:
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+        - libiconv
     host-musl-aarch64:
       dependencies:
         - libz
@@ -50,6 +51,7 @@ platforms:
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+        - libiconv
   Freebsd:
     host:
       dependencies:
