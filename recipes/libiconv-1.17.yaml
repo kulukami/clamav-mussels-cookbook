@@ -1,0 +1,43 @@
+name: libiconv
+version: "1.17"
+url: http://lf26-elkeid.bytetos.com/obj/elkeid-download/3rd_tools/libiconv-1.17.tar.gz
+mussels_version: "0.3"
+type: recipe
+platforms:
+  Linux:
+    host-static:
+      build_script:
+        configure: |
+          ./configure --enable-static=yes --enable-shared=no --prefix="{install}"
+        make: |
+          make 
+        install: |
+          make install
+      dependencies: []
+      required_tools:
+        - make
+        - gcc
+    host-musl-x86_64:
+      build_script:
+        configure: |
+          ./configure --enable-static=yes --enable-shared=no --prefix="{install}"
+        make: |
+          CC="x86_64-linux-musl-gcc -static -Os" CXX="x86_64-linux-musl-c++" make 
+        install: |
+          CC="x86_64-linux-musl-gcc -static -Os" CXX="x86_64-linux-musl-c++" make install
+      dependencies: []
+      required_tools:
+        - make
+        - x86_64-linux-musl-gcc
+    host-musl-aarch64:
+      build_script:
+        configure: |
+          ./configure --enable-static=yes --enable-shared=no --prefix="{install}"
+        make: |
+          CC="aarch64-linux-musl-gcc -static -Os" CXX="aarch64-linux-musl-c++" make 
+        install: |
+          CC="aarch64-linux-musl-gcc -static -Os" CXX="aarch64-linux-musl-c++" make install
+      dependencies: []
+      required_tools:
+        - make
+        - aarch64-linux-musl-gcc

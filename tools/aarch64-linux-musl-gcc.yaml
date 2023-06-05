@@ -1,0 +1,13 @@
+name: aarch64-linux-musl-gcc
+version: ""
+mussels_version: "0.1"
+type: tool
+platforms:
+  Posix:
+    path_checks:
+      - aarch64-linux-musl-gcc
+    command_checks:
+      - command: "aarch64-linux-musl-gcc --version"
+        output_has: "aarch64-linux-musl-gcc"
+    file_checks:
+      - /opt/aarch64-linux-musl/bin/aarch64-linux-musl-gcc

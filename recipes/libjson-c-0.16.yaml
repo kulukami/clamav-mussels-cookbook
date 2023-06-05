@@ -113,6 +113,58 @@ platforms:
       required_tools:
         - make
         - gcc
+    host-musl-x86_64:
+      build_script:
+        configure: |
+          mkdir build
+          cd build
+          cmake .. \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_INSTALL_PREFIX="{install}" \
+            -D CMAKE_C_COMPILER=x86_64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=x86_64-linux-musl-g++ \
+            -D BUILD_STATIC_LIBS=ON \
+            -D BUILD_SHARED_LIBS=OFF \
+            -D CMAKE_INSTALL_LIBDIR=lib
+        make: |
+          cd build
+          cmake --build .
+        install: |
+          cd build
+          make install
+      dependencies: []
+      install_paths:
+        license/libjson_c:
+          - COPYING
+      required_tools:
+        - make
+        - x86_64-linux-musl-gcc
+    host-musl-aarch64:
+      build_script:
+        configure: |
+          mkdir build
+          cd build
+          cmake .. \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_INSTALL_PREFIX="{install}" \
+            -D CMAKE_C_COMPILER=aarch64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=aarch64-linux-musl-g++ \
+            -D BUILD_STATIC_LIBS=ON \
+            -D BUILD_SHARED_LIBS=OFF \
+            -D CMAKE_INSTALL_LIBDIR=lib
+        make: |
+          cd build
+          cmake --build .
+        install: |
+          cd build
+          make install
+      dependencies: []
+      install_paths:
+        license/libjson_c:
+          - COPYING
+      required_tools:
+        - make
+        - aarch64-linux-musl-gcc
   Freebsd:
     host:
       build_script:

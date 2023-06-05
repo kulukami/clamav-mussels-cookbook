@@ -111,6 +111,56 @@ platforms:
         - cmake
         - make
         - gcc
+    host-musl-x86_64:
+      build_script:
+        configure: |
+          mkdir build
+          cd build
+          cmake .. \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_INSTALL_PREFIX="{install}" \
+            -D CMAKE_C_COMPILER=x86_64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=x86_64-linux-musl-g++ \
+            -D CMAKE_POSITION_INDEPENDENT_CODE=ON
+        make: |
+          cd build
+          cmake --build .
+        install: |
+          cd build
+          make install
+      dependencies: []
+      install_paths:
+        license/libz:
+          - README
+      required_tools:
+        - cmake
+        - make
+        - x86_64-linux-musl-gcc
+    host-musl-aarch64:
+      build_script:
+        configure: |
+          mkdir build
+          cd build
+          cmake .. \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_INSTALL_PREFIX="{install}" \
+            -D CMAKE_C_COMPILER=aarch64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=aarch64-linux-musl-g++ \
+            -D CMAKE_POSITION_INDEPENDENT_CODE=ON
+        make: |
+          cd build
+          cmake --build .
+        install: |
+          cd build
+          make install
+      dependencies: []
+      install_paths:
+        license/libz:
+          - README
+      required_tools:
+        - cmake
+        - make
+        - aarch64-linux-musl-gcc
   Freebsd:
     host:
       build_script:

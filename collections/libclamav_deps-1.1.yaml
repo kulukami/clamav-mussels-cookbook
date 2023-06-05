@@ -34,6 +34,22 @@ platforms:
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+    host-musl-x86_64:
+      dependencies:
+        - libz
+        - libjson_c
+        - libxml2
+        - libopenssl
+        - libpcre2
+        - libbz2<1.1.0
+    host-musl-aarch64:
+      dependencies:
+        - libz
+        - libjson_c
+        - libxml2
+        - libopenssl
+        - libpcre2
+        - libbz2<1.1.0
   Freebsd:
     host:
       dependencies:
