@@ -115,6 +115,7 @@ platforms:
       build_script:
         configure: |
           mkdir build
+          sed -i "s|add_library(zlib SHARED|add_library(zlib |gi" CMakeLists.txt
           cd build
           cmake .. \
             -D CMAKE_BUILD_TYPE=Release \
@@ -140,6 +141,7 @@ platforms:
       build_script:
         configure: |
           mkdir build
+          sed -i "s|add_library(zlib SHARED|add_library(zlib |gi" CMakeLists.txt
           cd build
           cmake .. \
             -D CMAKE_BUILD_TYPE=Release \
