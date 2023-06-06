@@ -154,6 +154,7 @@ platforms:
       build_script:
         configure: |
           ./config zlib \
+              -fPIC \
               --with-zlib-include="{includes}" \
               --with-zlib-lib="{libs}" \
               --prefix="{install}" \
@@ -181,6 +182,7 @@ platforms:
       build_script:
         configure: |
           ./config zlib \
+              -fPIC \
               --with-zlib-include="{includes}" \
               --with-zlib-lib="{libs}" \
               --prefix="{install}" \
