@@ -163,6 +163,60 @@ platforms:
         - cmake
         - make
         - gcc
+    host-musl-x86_64:
+      build_script:
+        configure: |
+          mkdir build
+          cd build
+          cmake .. \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_INSTALL_PREFIX="{install}" \
+            -D CMAKE_C_COMPILER=x86_64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=x86_64-linux-musl-g++ \
+            -D ENABLE_STATIC_LIB=ON \
+            -D ENABLE_SHARED_LIB=OFF \
+            -D CMAKE_INSTALL_LIBDIR=lib
+        make: |
+          cd build
+          cmake --build .
+        install: |
+          cd build
+          make install
+      dependencies: []
+      install_paths:
+        license/libbz2:
+          - COPYING
+      required_tools:
+        - cmake
+        - make
+        - x86_64_linux_musl_gcc
+    host-musl-aarch64:
+      build_script:
+        configure: |
+          mkdir build
+          cd build
+          cmake .. \
+            -D CMAKE_BUILD_TYPE=Release \
+            -D CMAKE_INSTALL_PREFIX="{install}" \
+            -D CMAKE_C_COMPILER=aarch64-linux-musl-gcc \
+            -D CMAKE_CXX_COMPILER=aarch64-linux-musl-g++ \
+            -D ENABLE_STATIC_LIB=ON \
+            -D ENABLE_SHARED_LIB=OFF \
+            -D CMAKE_INSTALL_LIBDIR=lib
+        make: |
+          cd build
+          cmake --build .
+        install: |
+          cd build
+          make install
+      dependencies: []
+      install_paths:
+        license/libbz2:
+          - COPYING
+      required_tools:
+        - cmake
+        - make
+        - aarch64_linux_musl_gcc
   Windows:
     x64:
       build_script:

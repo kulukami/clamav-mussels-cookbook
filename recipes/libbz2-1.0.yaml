@@ -99,6 +99,32 @@ platforms:
       required_tools:
         - make
         - gcc
+    host-musl-x86_64:
+      build_script:
+        make: |
+          make CFLAGS="-fPIC" CC=x86_64-linux-musl-gcc
+        install: |
+          make install PREFIX={install} CC=x86_64-linux-musl-gcc
+      dependencies: []
+      install_paths:
+        license/libbz2:
+          - LICENSE
+      required_tools:
+        - make
+        - x86_64_linux_musl_gcc
+    host-musl-aarch64:
+      build_script:
+        make: |
+          make CFLAGS="-fPIC" CC=aarch64-linux-musl-gcc
+        install: |
+          make install PREFIX={install} CC=aarch64-linux-musl-gcc
+      dependencies: []
+      install_paths:
+        license/libbz2:
+          - LICENSE
+      required_tools:
+        - make
+        - aarch64_linux_musl_gcc
   Windows:
     x64:
       build_script:

@@ -100,6 +100,44 @@ platforms:
       required_tools:
         - make
         - gcc
+    host-musl-x86_64:
+      build_script:
+        configure: |
+          CFLAGS="-fPIC" ./configure --prefix="{install}" \
+            --disable-dependency-tracking \
+            --disable-shared
+        make: |
+          make CC=x86_64-linux-musl-gcc
+        install: |
+          make install
+      dependencies:
+        - libbz2
+        - libz
+      install_paths:
+        license/libpcre2:
+          - COPYING
+      required_tools:
+        - make
+        - x86_64_linux_musl_gcc
+    host-musl-aarch64:
+      build_script:
+        configure: |
+          CFLAGS="-fPIC" ./configure --prefix="{install}" \
+            --disable-dependency-tracking \
+            --disable-shared
+        make: |
+          make CC=aarch64-linux-musl-gcc
+        install: |
+          make install
+      dependencies:
+        - libbz2
+        - libz
+      install_paths:
+        license/libpcre2:
+          - COPYING
+      required_tools:
+        - make
+        - aarch64_linux_musl_gcc
   Freebsd:
     host:
       build_script:

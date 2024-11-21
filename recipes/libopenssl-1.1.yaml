@@ -150,6 +150,62 @@ platforms:
       required_tools:
         - make
         - gcc
+    host-musl-x86_64:
+      build_script:
+        configure: |
+          ./config zlib \
+              -fPIC \
+              --with-zlib-include="{includes}" \
+              --with-zlib-lib="{libs}" \
+              --prefix="{install}" \
+              --libdir=lib \
+              AR=x86_64-linux-musl-ar \
+              AS=x86_64-linux-musl-as \
+              CC=x86_64-linux-musl-gcc \
+              CXX=x86_64-linux-musl-g++ \
+              no-async \
+              no-shared \
+              no-zlib-dynamic
+        make: |
+          make CC=x86_64-linux-musl-gcc
+        install: |
+          make install_sw
+      dependencies:
+        - libz
+      install_paths:
+        license/libopenssl:
+          - LICENSE
+      required_tools:
+        - make
+        - x86_64_linux_musl_gcc
+    host-musl-aarch64:
+      build_script:
+        configure: |
+          ./config zlib \
+              -fPIC \
+              --with-zlib-include="{includes}" \
+              --with-zlib-lib="{libs}" \
+              --prefix="{install}" \
+              --libdir=lib \
+              AR=aarch64-linux-musl-ar \
+              AS=aarch64-linux-musl-as \
+              CC=aarch64-linux-musl-gcc \
+              CXX=aarch64-linux-musl-g++ \
+              no-async \
+              no-shared \
+              no-zlib-dynamic
+        make: |
+          make CC=aarch64-linux-musl-gcc
+        install: |
+          make install_sw
+      dependencies:
+        - libz
+      install_paths:
+        license/libopenssl:
+          - LICENSE
+      required_tools:
+        - make
+        - aarch64_linux_musl_gcc
   Freebsd:
     host:
       build_script:
