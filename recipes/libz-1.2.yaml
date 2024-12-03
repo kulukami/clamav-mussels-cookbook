@@ -162,7 +162,7 @@ platforms:
       required_tools:
         - cmake
         - make
-        - aarch64-linux-musl-gcc
+        - aarch64_linux_musl_gcc
   Freebsd:
     host:
       build_script:
